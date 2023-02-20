@@ -13,7 +13,7 @@ const AddItem = ({ items, setItems }: Props) => {
     if (inputRef.current?.value === "") {
       return;
     }
-    setItems([...items, { itemId: crypto.randomUUID(), itemName, clear: false }]);
+    setItems([{ itemId: crypto.randomUUID(), itemName, clear: false }, ...items]);
     setItemName("");
   };
 

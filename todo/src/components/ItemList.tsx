@@ -1,5 +1,6 @@
 import React from "react";
 import { Props } from "../interface/interface";
+import { List, TodoText, ListWrap } from "../styles/ItemList.style";
 import { Item } from "../types/type";
 
 const ItemList = ({ items, setItems }: Props) => {
@@ -20,19 +21,19 @@ const ItemList = ({ items, setItems }: Props) => {
   };
 
   return (
-    <ul>
+    <ListWrap>
       {items.map((data: Item) => {
         return (
-          <li key={data.itemId}>
-            <p>{data.itemName}</p>
+          <List key={data.itemId} clear={data.clear}>
+            <TodoText>{data.itemName}</TodoText>
             <div>
               <button onClick={() => handleDelete(data)}>삭제</button>
-              <button onClick={() => handleComplete(data)}>완료</button>
+              <button onClick={() => handleComplete(data)}>{data.clear ? "취소" : "완료"}</button>
             </div>
-          </li>
+          </List>
         );
       })}
-    </ul>
+    </ListWrap>
   );
 };
 
