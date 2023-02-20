@@ -10,7 +10,7 @@ const theme: DefaultTheme = {
   },
 
   fontSize: {
-    title: "18px",
+    title: "24px",
     text: "16px",
   },
 };

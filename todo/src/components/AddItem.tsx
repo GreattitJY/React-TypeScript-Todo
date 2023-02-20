@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Props } from "../interface/interface";
+import { CreateBtn, InputTodo } from "../styles/AddItem.style";
 
 const AddItem = ({ items, setItems }: Props) => {
   const [itemName, setItemName] = useState<string>("");
@@ -18,8 +19,8 @@ const AddItem = ({ items, setItems }: Props) => {
 
   return (
     <>
-      <input type="text" value={itemName} onChange={handleItmeName} ref={inputRef} />
-      <button onClick={handleClickButton}>생성</button>
+      <InputTodo type="text" value={itemName} onChange={handleItmeName} ref={inputRef} />
+      <CreateBtn onClick={handleClickButton}>생성</CreateBtn>
     </>
   );
 };
