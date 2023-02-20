@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AddItem from "./components/AddItem";
 import ItemList from "./components/ItemList";
+import { Container } from "./styles/Container.style";
 import { Item } from "./types/type";
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
   }, [items]);
 
   return (
-    <div>
+    <Container>
       <div>
         <div>
           <h1>Todo List</h1>
@@ -20,7 +21,7 @@ function App() {
         <AddItem {...{ items }} {...{ setItems }} />
         <ItemList {...{ items }} {...{ setItems }} />
       </div>
-    </div>
+    </Container>
   );
 }
 
