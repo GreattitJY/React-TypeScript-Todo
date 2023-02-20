@@ -9,7 +9,8 @@ const AddItem = ({ items, setItems }: Props) => {
   const handleItmeName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setItemName(e.target.value);
   };
-  const handleClickButton = () => {
+  const handleClickButton = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     if (inputRef.current?.value === "") {
       return;
     }
