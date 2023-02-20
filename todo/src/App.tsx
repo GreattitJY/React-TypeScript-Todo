@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import AddItem from "./components/AddItem";
 import ItemList from "./components/ItemList";
 import { Item } from "./types/type";
 
 function App() {
-  const [items, setItems] = useState<Item[]>([]);
+  const saveItem = localStorage["todos"] ? JSON.parse(localStorage.getItem("todos") || "") : [];
+  const [items, setItems] = useState<Item[]>(saveItem);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(items));
+  }, [items]);
+
   return (
     <div>
       <div>
