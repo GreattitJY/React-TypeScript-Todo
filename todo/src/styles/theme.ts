@@ -6,7 +6,7 @@ const theme: DefaultTheme = {
   color: {
     "green-100": "#0cdbc9",
     "green-200": "#70bdf0",
-    sub: "#fff",
+    "green-300": "#37949f",
   },
 
   fontSize: {

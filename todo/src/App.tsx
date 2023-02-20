@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AddItem from "./components/AddItem";
 import ItemList from "./components/ItemList";
 import { Container } from "./styles/Container.style";
+import { Wrapper } from "./styles/Wrapper.style";
 import { Item } from "./types/type";
 
 function App() {
@@ -13,15 +14,15 @@ function App() {
   }, [items]);
 
   return (
-    <Container>
-      <div>
+    <Wrapper>
+      <Container>
         <div>
           <h1>Todo List</h1>
         </div>
         <AddItem {...{ items }} {...{ setItems }} />
         <ItemList {...{ items }} {...{ setItems }} />
-      </div>
-    </Container>
+      </Container>
+    </Wrapper>
   );
 }
 
