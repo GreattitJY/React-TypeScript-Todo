@@ -7,19 +7,12 @@ import { Wrapper } from "./styles/Wrapper.style";
 import { Item } from "./types/type";
 
 function App() {
-  const saveItem = localStorage["todos"] ? JSON.parse(localStorage.getItem("todos") || "") : [];
-  const [items, setItems] = useState<Item[]>(saveItem);
-
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(items));
-  }, [items]);
-
   return (
     <Wrapper>
       <Container>
         <HeadOne>Todo List</HeadOne>
-        <AddItem {...{ items }} {...{ setItems }} />
-        <ItemList {...{ items }} {...{ setItems }} />
+        <AddItem />
+        <ItemList />
       </Container>
     </Wrapper>
   );
